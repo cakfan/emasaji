@@ -1,0 +1,31 @@
+---
+import site from '../data/site.json';
+const waLink = `https://wa.me/${site.brand.whatsapp}?text=${encodeURIComponent('Halo EmasAji, saya mau daftar kursus mengemudi')}`;
+---
+
+<section class="section cta-final">
+  <div class="container cta-final__box" data-reveal>
+    <h2>Siap pegang kendali penuh atas kendaraan Anda?</h2>
+    <p>Konsultasi gratis, tanpa komitmen. Kami bantu tentukan paket yang paling pas untuk Anda.</p>
+    <a href={waLink} class="btn btn-primary" target="_blank" rel="noopener">Chat via WhatsApp</a>
+  </div>
+</section>
+
+<style>
+  .cta-final__box {
+    text-align: center;
+    padding: 72px 24px;
+    border: 1px solid var(--gold);
+    background: radial-gradient(circle at 50% 0%, rgba(236, 216, 16, 0.08), transparent 60%);
+  }
+  .cta-final__box h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .cta-final__box p {
+    margin: 20px auto 32px;
+    color: var(--muted);
+    max-width: 460px;
+  }
+</style>

@@ -1,0 +1,66 @@
+---
+import site from '../data/site.json';
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="/logo.png" alt="EmasAji" width="36" height="36" />
+      <p>EmasAji Kursus Mengemudi<br />{site.brand.location}</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Kontak</h4>
+      <a href={`https://wa.me/${site.brand.whatsapp}`} target="_blank" rel="noopener">WhatsApp: {site.brand.phoneDisplay}</a>
+      <a href={`https://instagram.com/${site.brand.instagram}`} target="_blank" rel="noopener">Instagram</a>
+      <a href={`https://tiktok.com/@${site.brand.tiktok}`} target="_blank" rel="noopener">TikTok</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Navigasi</h4>
+      <a href="#layanan">Layanan</a>
+      <a href="#rute">Program</a>
+      <a href="#paket">Paket</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© {new Date().getFullYear()} EmasAji. Terdaftar resmi Dinas Pendidikan & Korlantas Polri.</span>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--line);
+    padding-top: 64px;
+  }
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 48px;
+  }
+  .footer__brand { display: flex; gap: 14px; }
+  .footer__brand img { border-radius: 50%; }
+  .footer__brand p { color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+  .footer__col { display: flex; flex-direction: column; gap: 12px; }
+  .footer__col h4 {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .footer__col a { color: var(--muted); font-size: 0.9rem; }
+  .footer__col a:hover { color: var(--gold); }
+  .footer__bottom {
+    border-top: 1px solid var(--line);
+    padding: 20px 24px;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 700px) {
+    .footer__inner { grid-template-columns: 1fr; gap: 28px; }
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+import site from '../data/site.json';
+---
+
+<section id="faq" class="section faq">
+  <div class="container faq__inner">
+    <div class="faq__side" data-reveal>
+      <span class="eyebrow">FAQ</span>
+      <h2>Pertanyaan seputar kursus</h2>
+    </div>
+    <div class="faq__list">
+      {site.faq.map((item, i) => (
+        <details class="faq__item" data-reveal style={`--i: ${i}`}>
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq__inner {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 48px;
+  }
+  .faq__side h2 {
+    margin-top: 18px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+  .faq__list { display: flex; flex-direction: column; }
+  .faq__item {
+    border-bottom: 1px solid var(--line);
+  }
+  .faq__item summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  .faq__item summary::-webkit-details-marker { display: none; }
+  .faq__item summary::after {
+    content: '+';
+    color: var(--muted);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-left: 16px;
+    transition: transform 0.2s ease;
+  }
+  .faq__item[open] summary::after { transform: rotate(45deg); }
+  .faq__item p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    max-width: 640px;
+    padding-bottom: 20px;
+    animation: faqSlide 0.3s ease-out;
+  }
+  @keyframes faqSlide {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 860px) {
+    .faq__inner { grid-template-columns: 1fr; }
+  }
+</style>

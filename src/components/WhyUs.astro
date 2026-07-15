@@ -1,0 +1,63 @@
+---
+import site from '../data/site.json';
+---
+
+<section class="section whyus">
+  <div class="container whyus__inner">
+    <div class="whyus__side" data-reveal>
+      <span class="eyebrow">Kenapa EmasAji</span>
+      <h2>Diajar sampai benar-benar bisa, bukan sekadar lulus</h2>
+    </div>
+    <div class="whyus__grid">
+      {site.why.map((w, i) => (
+        <div class="whyus__item" data-reveal style={`--i: ${i}`}>
+          <span class="whyus__num">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3>{w.title}</h3>
+            <p>{w.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .whyus { background: var(--bg-elevated); }
+  .whyus__inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 48px;
+  }
+  .whyus__side h2 {
+    margin-top: 18px;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+  }
+  .whyus__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .whyus__item {
+    display: flex;
+    gap: 16px;
+  }
+  .whyus__num {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--white);
+  }
+  .whyus__item h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .whyus__item p {
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 860px) {
+    .whyus__inner { grid-template-columns: 1fr; }
+    .whyus__grid { grid-template-columns: 1fr; }
+  }
+</style>

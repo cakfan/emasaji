@@ -1,0 +1,140 @@
+---
+import site from '../data/site.json';
+const waLink = `https://wa.me/${site.brand.whatsapp}?text=${encodeURIComponent('Halo EmasAji, saya mau tanya soal kursus mengemudi')}`;
+---
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="#" class="brand">
+      <img src="/logo.png" alt="EmasAji" width="40" height="40" />
+      <span class="brand__text">
+        <strong>EmasAji</strong>
+        <small>Kursus Mengemudi</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="#layanan">Layanan</a>
+      <a href="#rute">Program</a>
+      <a href="#paket">Paket</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Buka menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href={waLink} class="btn btn-primary header__cta" target="_blank" rel="noopener">
+      Daftar Sekarang
+    </a>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(12, 12, 10, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand img { border-radius: 50%; }
+  .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
+  .brand__text strong {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+  }
+  .brand__text small {
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .nav {
+    display: flex;
+    gap: 32px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .nav a:hover { color: var(--gold); }
+  .header__cta { padding: 11px 22px; font-size: 0.85rem; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--white);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.is-open span:nth-child(2) { opacity: 0; }
+  .hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 860px) {
+    .nav {
+      display: none;
+      position: absolute;
+      top: 76px;
+      left: 0;
+      right: 0;
+      background: var(--bg-elevated);
+      border-bottom: 1px solid var(--line);
+      flex-direction: column;
+      padding: 24px;
+      gap: 16px;
+      z-index: 40;
+    }
+    .nav.is-open { display: flex; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 560px) {
+    .header__cta span { display: none; }
+    .brand__text small { display: none; }
+  }
+</style>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav');
+  if (hamburger && nav) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('is-open');
+      nav.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+    nav.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('is-open');
+        nav.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>

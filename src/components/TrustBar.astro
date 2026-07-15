@@ -1,0 +1,44 @@
+---
+import site from '../data/site.json';
+---
+
+<div class="trustbar" data-reveal>
+  <div class="container trustbar__inner">
+    {site.trust.map((t) => (
+      <span class="trustbar__item">{t}</span>
+    ))}
+  </div>
+</div>
+
+<style>
+  .trustbar {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-elevated);
+  }
+  .trustbar__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 40px;
+    padding: 18px 24px;
+  }
+  .trustbar__item {
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    position: relative;
+    padding-left: 16px;
+  }
+  .trustbar__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--muted);
+    border-radius: 50%;
+  }
+</style>

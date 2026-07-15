@@ -1,0 +1,61 @@
+---
+import site from '../data/site.json';
+---
+
+<section class="section testimonials">
+  <div class="container">
+    <span class="eyebrow">Cerita Siswa</span>
+    <h2 class="testimonials__title">Yang mereka rasakan setelah lulus</h2>
+
+    <div class="testimonials__grid">
+      {site.testimonials.map((t, i) => (
+        <blockquote class="t-card" data-reveal style={`--i: ${i}`}>
+          <p>&ldquo;{t.quote}&rdquo;</p>
+          <footer>
+            <strong>{t.name}</strong>
+            <span>{t.role}</span>
+          </footer>
+        </blockquote>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials__title {
+    margin-top: 18px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    max-width: 560px;
+  }
+  .testimonials__grid {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .t-card {
+    margin: 0;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-top: 2px solid var(--gold);
+  }
+  .t-card p {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--white);
+  }
+  .t-card footer {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.82rem;
+  }
+  .t-card footer strong { color: var(--white); }
+  .t-card footer span { color: var(--muted); }
+
+  @media (max-width: 860px) {
+    .testimonials__grid { grid-template-columns: 1fr; }
+  }
+</style>

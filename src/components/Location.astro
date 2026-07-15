@@ -1,0 +1,125 @@
+---
+import site from '../data/site.json';
+const { brand } = site;
+const waLink = `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent('Halo EmasAji, saya mau tanya lokasi dan jadwal kursus')}`;
+---
+
+<section id="lokasi" class="section location">
+  <div class="container">
+    <span class="eyebrow">Lokasi</span>
+    <h2 class="location__title">Datang langsung ke tempat kami</h2>
+
+    <div class="location__grid" data-reveal>
+      <div class="location__map">
+        <iframe
+          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.${Math.round(Math.abs(brand.coordinates.lat) * 1e5)}!2d${brand.coordinates.lng}!3d${brand.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6974a3e5fb2ef%3A0xada808810dc83425!2sEmasAji%20Kursus%20mengemudi%20%26%20Biro%20Jasa!5e0!3m2!1sid!2sid!4v1720000000000`}
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Lokasi EmasAji Kursus Mengemudi Jember"
+        ></iframe>
+      </div>
+
+      <div class="location__info">
+        <div class="location__info-item">
+          <svg class="location__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <strong>Alamat</strong>
+            <p>{brand.address}</p>
+          </div>
+        </div>
+
+        <div class="location__info-item">
+          <svg class="location__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div>
+            <strong>Jam Operasional</strong>
+            <p>{brand.hours}</p>
+          </div>
+        </div>
+
+        <div class="location__info-item">
+          <svg class="location__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <strong>WhatsApp / Telepon</strong>
+            <p>{brand.phoneDisplay}</p>
+          </div>
+        </div>
+
+        <div class="location__actions">
+          <a href={brand.mapsUrl} class="btn btn-primary" target="_blank" rel="noopener">
+            Buka di Google Maps
+          </a>
+          <a href={waLink} class="btn btn-ghost" target="_blank" rel="noopener">
+            Tanya via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .location__title {
+    margin-top: 18px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    max-width: 560px;
+  }
+  .location__grid {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    min-height: 380px;
+  }
+  .location__map {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-elevated);
+  }
+  .location__map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+  }
+  .location__info {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .location__info-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .location__icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--white);
+  }
+  .location__info-item strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .location__info-item p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .location__actions {
+    margin-top: 8px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 860px) {
+    .location__grid { grid-template-columns: 1fr; }
+    .location__map iframe { min-height: 280px; }
+  }
+</style>

@@ -1,0 +1,70 @@
+---
+import '../styles/global.css';
+import site from '../data/site.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'EmasAji — Kursus Mengemudi Terpercaya di Jember',
+  description = 'Kursus mengemudi mobil & motor di Jember. Instruktur bersertifikat, armada terawat, terdaftar resmi Dinas Pendidikan & Korlantas Polri.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="canonical" href="https://emasaji.id" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/logo.png" />
+    <meta name="twitter:card" content="summary" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "DrivingSchool",
+      "name": site.brand.name,
+      "areaServed": site.brand.location,
+      "telephone": site.brand.phoneDisplay,
+    })} />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Loncat ke konten utama</a>
+    <slot />
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const elements = document.querySelectorAll('[data-reveal]');
+        if (!elements.length) return;
+
+        if (prefersReduced) {
+          elements.forEach((el) => el.classList.add('is-visible'));
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        elements.forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

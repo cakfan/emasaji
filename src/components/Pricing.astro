@@ -1,0 +1,163 @@
+---
+import site from '../data/site.json';
+const waLink = (pkg) => `https://wa.me/${site.brand.whatsapp}?text=${encodeURIComponent(`Halo EmasAji, saya mau daftar paket ${pkg}`)}`;
+---
+
+<section id="paket" class="section pricing">
+  <div class="container">
+    <span class="eyebrow">Paket</span>
+    <h2 class="pricing__title">Harga transparan, tanpa biaya tersembunyi</h2>
+
+    <div class="pricing__grid">
+      {site.pricing.map((p, i) => (
+        <div class:list={['price-card', { 'price-card--highlight': p.highlight }]} data-reveal style={`--i: ${i}`}>
+          {p.highlight && <span class="price-card__badge">{p.badge || 'Paling Diminati'}</span>}
+          <h3>{p.name}</h3>
+          <div class="price-card__price">
+            <span>{p.price}</span>
+            {p.originalPrice && <small class="price-card__original">{p.originalPrice}</small>}
+          </div>
+          <p class="price-card__sessions">{p.sessions} &middot; {p.duration}</p>
+          <ul>
+            {p.features.map((f) => <li>{f}</li>)}
+          </ul>
+          <a href={waLink(p.name)} class:list={['btn', p.highlight ? 'btn-primary' : 'btn-ghost']} target="_blank" rel="noopener">
+            Pilih {p.name}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    {site.pricingInfo && site.pricingInfo.length > 0 && (
+      <div class="pricing__info" data-reveal>
+        <h3>Informasi Penting</h3>
+        <ul>
+          {site.pricingInfo.map((info) => (
+            <li>{info}</li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .pricing__title {
+    margin-top: 18px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    max-width: 600px;
+  }
+  .pricing__grid {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .price-card {
+    position: relative;
+    border: 1px solid var(--line);
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .price-card--highlight {
+    border-color: var(--gold);
+    background: var(--bg-elevated);
+  }
+  .price-card__badge {
+    position: absolute;
+    top: -13px;
+    right: 24px;
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    letter-spacing: 0.04em;
+  }
+  .price-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .price-card__price {
+    margin-top: 18px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .price-card__price span {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--gold);
+  }
+  .price-card__original {
+    color: var(--muted);
+    font-size: 0.95rem;
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+  }
+  .price-card__sessions {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .price-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+  }
+  .price-card li {
+    font-size: 0.88rem;
+    padding-left: 20px;
+    position: relative;
+    color: var(--white);
+  }
+  .price-card li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+  .price-card .btn { justify-content: center; }
+
+  .pricing__info {
+    margin-top: 48px;
+    padding: 28px;
+    border: 1px solid var(--line);
+    background: var(--bg-elevated);
+  }
+  .pricing__info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .pricing__info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 32px;
+  }
+  .pricing__info li {
+    font-size: 0.85rem;
+    color: var(--muted);
+    padding-left: 20px;
+    position: relative;
+  }
+  .pricing__info li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  @media (max-width: 900px) {
+    .pricing__grid { grid-template-columns: 1fr; }
+    .pricing__info ul { grid-template-columns: 1fr; }
+  }
+</style>

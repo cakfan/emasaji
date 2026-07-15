@@ -1,0 +1,283 @@
+---
+import site from '../data/site.json';
+const waLink = `https://wa.me/${site.brand.whatsapp}?text=${encodeURIComponent('Halo EmasAji, saya mau daftar kursus mengemudi')}`;
+---
+
+<section class="hero">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <span class="eyebrow">Kursus Mengemudi · {site.brand.location}</span>
+      <h1>
+        Belajar nyetir<br />
+        dengan tenang,<br />
+        <span class="hero__accent">bawa pulang percaya diri.</span>
+      </h1>
+      <p class="hero__desc">
+        EmasAji melatih Anda dari nol sampai lulus SIM — instruktur privat, jadwal fleksibel, armada terawat.
+      </p>
+      <div class="hero__actions">
+        <a href={waLink} class="btn btn-primary" target="_blank" rel="noopener">Konsultasi via WhatsApp</a>
+        <a href="#rute" class="btn btn-ghost">Lihat program</a>
+      </div>
+      <ul class="hero__trust">
+        {site.trust.slice(0, 2).map((t) => <li>{t}</li>)}
+      </ul>
+    </div>
+
+    <div class="hero__gauge" role="img" aria-label="98 persen siswa EmasAji lulus ujian SIM">
+      <svg viewBox="0 0 320 220" class="gauge-svg">
+        <defs>
+          <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#8b6914" />
+            <stop offset="50%" stop-color="#c9a227" />
+            <stop offset="100%" stop-color="#ecd810" />
+          </linearGradient>
+        </defs>
+
+        <!-- track -->
+        <path d="M 30 190 A 130 130 0 0 1 290 190" fill="none" stroke="rgba(250,249,245,0.15)" stroke-width="14" stroke-linecap="round" />
+        <!-- progress arc (98%) -->
+        <path class="gauge-progress" d="M 30 190 A 130 130 0 0 1 290 190" fill="none" stroke="url(#arcGrad)" stroke-width="14" stroke-linecap="round" pathLength="100" stroke-dasharray="98 100" />
+
+        <!-- ticks -->
+        <g stroke="rgba(250,249,245,0.35)" stroke-width="2">
+          <line x1="30" y1="190" x2="30" y2="172" />
+          <line x1="66" y1="112" x2="80" y2="126" />
+          <line x1="160" y1="60" x2="160" y2="80" />
+          <line x1="254" y1="112" x2="240" y2="126" />
+          <line x1="290" y1="190" x2="290" y2="172" />
+        </g>
+
+        <!-- needle -->
+        <g class="gauge-needle" style="transform-origin: 160px 190px;">
+          <line x1="160" y1="190" x2="160" y2="82" stroke="var(--gold)" stroke-width="3" stroke-linecap="round" />
+        </g>
+        <circle cx="160" cy="190" r="11" fill="var(--gold)" />
+
+        <text x="160" y="150" text-anchor="middle" class="gauge-value" id="gaugeValue">0%</text>
+        <text x="160" y="172" text-anchor="middle" class="gauge-label">lulus ujian SIM</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 96px 0 48px;
+  }
+  .hero__glow {
+    position: absolute;
+    top: -200px;
+    right: -160px;
+    width: 560px;
+    height: 560px;
+    background: radial-gradient(circle, rgba(236, 216, 16, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .hero__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .hero__copy .eyebrow { margin-bottom: 22px; }
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    color: var(--white);
+  }
+  .hero__accent { color: var(--gold); }
+  .hero__desc {
+    margin-top: 22px;
+    max-width: 480px;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+  .hero__actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 34px;
+    flex-wrap: wrap;
+  }
+  .hero__trust {
+    margin: 36px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .hero__trust li { padding-left: 20px; position: relative; }
+  .hero__trust li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  .hero__gauge { display: flex; justify-content: center; }
+  .gauge-svg { width: 100%; max-width: 380px; }
+  .gauge-progress {
+    filter: drop-shadow(0 0 0px rgba(236, 216, 16, 0));
+  }
+  .gauge-needle {
+    transform: rotate(-90deg);
+  }
+  .gauge-value {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    fill: var(--white);
+  }
+  .gauge-label {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    fill: var(--muted);
+  }
+  @keyframes pulseGlow {
+    0%, 100% { filter: drop-shadow(0 0 8px rgba(254, 202, 87, 0.4)); }
+    50% { filter: drop-shadow(0 0 20px rgba(254, 202, 87, 0.8)); }
+  }
+
+  @media (max-width: 900px) {
+    .hero__inner { grid-template-columns: 1fr; }
+    .hero__gauge { order: -1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gauge-progress {
+      animation: none !important;
+      stroke-dasharray: 98 100 !important;
+    }
+    .gauge-needle {
+      animation: none !important;
+      transform: rotate(86.4deg) !important;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const el = document.getElementById('gaugeValue');
+    const needle = document.querySelector('.gauge-needle');
+    const arc = document.querySelector('.gauge-progress');
+    if (!el || !needle || !arc) return;
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      el.textContent = '98%';
+      return;
+    }
+
+    const TARGET = 98;
+    const MIN_DEG = -90;
+    const MAX_DEG = 86.4;
+    const RANGE = MAX_DEG - MIN_DEG;
+
+    function pctToDeg(pct: number) {
+      return MIN_DEG + (pct / 100) * RANGE;
+    }
+
+    function setArc(pct: number) {
+      arc.setAttribute('stroke-dasharray', `${pct} 100`);
+    }
+
+    function setNeedle(pct: number) {
+      const deg = pctToDeg(pct);
+      needle.style.transform = `rotate(${deg}deg)`;
+    }
+
+    function setNumber(pct: number) {
+      el.textContent = `${Math.round(pct)}%`;
+    }
+
+    function applyState(pct: number) {
+      const clamped = Math.min(pct, 99);
+      setArc(clamped);
+      setNeedle(clamped);
+      setNumber(clamped);
+    }
+
+    function easeIn(t: number) { return t * t * t; }
+    function easeOut(t: number) { return 1 - Math.pow(1 - t, 3); }
+    function easeInOut(t: number) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+
+    const phases = [
+      // Gear 1 — berangkat pelan
+      { start: 0,    end: 1200, from: 0,  to: 22, ease: easeIn },
+      // Shift 1→2
+      { start: 1200, end: 1450, from: 22, to: 16, ease: easeOut },
+      // Gear 2 — mulai ngebut
+      { start: 1450, end: 2400, from: 16, to: 40, ease: easeInOut },
+      // Shift 2→3
+      { start: 2400, end: 2600, from: 40, to: 33, ease: easeOut },
+      // Gear 3 — stabil
+      { start: 2600, end: 3400, from: 33, to: 58, ease: easeInOut },
+      // Shift 3→4
+      { start: 3400, end: 3580, from: 58, to: 51, ease: easeOut },
+      // Gear 4 — kencang
+      { start: 3580, end: 4200, from: 51, to: 75, ease: easeInOut },
+      // Shift 4→5
+      { start: 4200, end: 4380, from: 75, to: 68, ease: easeOut },
+      // Gear 5 — mendekati max
+      { start: 4380, end: 5200, from: 68, to: 92, ease: easeOut },
+      // Settle — cruise
+      { start: 5200, end: 5800, from: 92, to: 99, ease: easeOut },
+    ];
+
+    const totalDuration = 5800;
+
+    function getPhaseValue(elapsed: number): number {
+      for (let i = phases.length - 1; i >= 0; i--) {
+        const p = phases[i];
+        if (elapsed >= p.start) {
+          if (elapsed >= p.end) return p.to;
+          const t = (elapsed - p.start) / (p.end - p.start);
+          return p.from + (p.to - p.from) * p.ease(t);
+        }
+      }
+      return phases[0].from;
+    }
+
+    const mainStart = performance.now();
+
+    function tickMain(now: number) {
+      const elapsed = now - mainStart;
+      const pct = getPhaseValue(elapsed);
+      applyState(pct);
+
+      if (elapsed < totalDuration) {
+        requestAnimationFrame(tickMain);
+      } else {
+        applyState(TARGET);
+        startIdleRev();
+      }
+    }
+
+    requestAnimationFrame(tickMain);
+
+    function startIdleRev() {
+      const idleStart = performance.now();
+      function tickIdle(now: number) {
+        const t = (now - idleStart) / 1000;
+        // Subtle idle rumble
+        const rumble = Math.sin(t * 2.1) * 1.2;
+        // Occasional gas blip tiap ~5s
+        const blipCycle = t % 5;
+        const blip = blipCycle < 0.35 ? Math.sin((blipCycle / 0.35) * Math.PI) * 2.5 : 0;
+        const pct = TARGET + rumble + blip;
+        applyState(pct);
+        requestAnimationFrame(tickIdle);
+      }
+      requestAnimationFrame(tickIdle);
+    }
+  })();
+</script>

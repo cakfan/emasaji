@@ -1,0 +1,138 @@
+{
+  "brand": {
+    "name": "EmasAji",
+    "tagline": "Kursus Mengemudi",
+    "location": "Jember, Jawa Timur",
+    "whatsapp": "6282232590089",
+    "instagram": "kursusmengemudijember_emasaji",
+    "tiktok": "kursusmengemudijember",
+    "phoneDisplay": "0822-3259-0089",
+    "address": "Perumahan Muktisari BBG 14-15, Pakem, Kranjingan, Kec. Sumbersari, Kabupaten Jember, Jawa Timur 68126",
+    "mapsUrl": "https://maps.google.com/?q=EmasAji+Kursus+mengemudi+Jember",
+    "coordinates": { "lat": -8.2083407, "lng": 113.6971718 },
+    "hours": "Buka setiap hari, 07:00 - 18:00 (Jumat libur)"
+  },
+  "stats": [
+    { "value": 1000, "suffix": "+", "label": "Siswa telah lulus" },
+    { "value": 98, "suffix": "%", "label": "Tingkat kelulusan ujian" },
+    { "value": 9, "suffix": " thn", "label": "Pengalaman melatih" }
+  ],
+  "trust": [
+    "Terdaftar resmi Dinas Pendidikan",
+    "Bermitra dengan Korlantas Polri",
+    "8.500+ anggota komunitas EmasAji",
+    "Rating 4.9/5 dari siswa"
+  ],
+  "services": [
+    {
+      "icon": "wheel",
+      "title": "Kursus Mobil Manual & Matic",
+      "desc": "Belajar privat satu-lawan-satu, dari pertama kali nyalain mesin sampai siap ujian SIM."
+    },
+    {
+      "icon": "document",
+      "title": "Biro Jasa STNK & SIM",
+      "desc": "Urus dokumen kendaraan lebih cepat, tanpa antre panjang."
+    }
+  ],
+  "steps": [
+    {
+      "km": "KM 0",
+      "title": "Daftar & Konsultasi",
+      "desc": "Ceritakan goal Anda — kami susun jadwal yang pas, tanpa biaya tersembunyi."
+    },
+    {
+      "km": "KM 1",
+      "title": "Kenali Kendaraan & Rambu",
+      "desc": "Pahami dasar-dasar sebelum nyetir, biar pas turun jalan nggak kaget."
+    },
+    {
+      "km": "KM 2",
+      "title": "Turun ke Jalan Jember",
+      "desc": "Latihan dari area sepi sampai jalanan ramai, ditemenin instruktur sabar."
+    },
+    {
+      "km": "KM 3",
+      "title": "Simulasi Ujian",
+      "desc": "Latihan pakai standar ujian asli, grogi hilang sebelum hari-H."
+    },
+    {
+      "km": "FINISH",
+      "title": "Lulus & Bawa SIM",
+      "desc": "Bukan cuma lulus — tapi beneran pede nyetir sendiri."
+    }
+  ],
+  "why": [
+    { "title": "Instruktur Bersertifikat", "desc": "Terlatih dan berpengalaman puluhan tahun — sabar ngadepin siswa dari yang takut megang setir sampai yang agak bandel." },
+    { "title": "Armada Terawat", "desc": "Kendaraan diservis rutin, nyaman dan aman untuk belajar dari nol." },
+    { "title": "Jadwal Fleksibel", "desc": "Bisa dijemput dari rumah, waktu belajar menyesuaikan kesibukan Anda." },
+    { "title": "Garansi Bimbingan", "desc": "Belum lulus ujian? Kami dampingi lagi hingga Anda benar-benar siap." }
+  ],
+  "pricing": [
+    {
+      "name": "Basic",
+      "price": "Rp 390.000",
+      "originalPrice": "Rp 450.000",
+      "sessions": "3x pertemuan",
+      "duration": "90 menit/pertemuan",
+      "features": ["Mobil manual atau matic", "Instruktur privat", "Area latihan bertahap"],
+      "highlight": false
+    },
+    {
+      "name": "Handal",
+      "price": "Rp 760.000",
+      "originalPrice": "Rp 900.000",
+      "sessions": "6x pertemuan",
+      "duration": "90 menit/pertemuan",
+      "features": ["Mobil manual atau matic", "Instruktur privat", "Simulasi ujian SIM", "Jemput-antar area kota"],
+      "highlight": false
+    },
+    {
+      "name": "Mahir",
+      "price": "Rp 980.000",
+      "originalPrice": "Rp 1.200.000",
+      "sessions": "8x pertemuan",
+      "duration": "90 menit/pertemuan",
+      "features": ["Mobil manual atau matic", "Instruktur privat", "Simulasi ujian SIM", "Jemput-antar area kota"],
+      "highlight": false
+    },
+    {
+      "name": "VIP",
+      "price": "Rp 1.200.000",
+      "originalPrice": "Rp 1.500.000",
+      "sessions": "10x pertemuan",
+      "duration": "90 menit/pertemuan",
+      "features": ["Mobil manual atau matic", "Instruktur privat", "Simulasi ujian SIM", "Jemput-antar seluruh Jember", "Pendampingan hari ujian"],
+      "highlight": false
+    },
+    {
+      "name": "VVIP",
+      "price": "Rp 2.300.000",
+      "originalPrice": "Rp 2.650.000",
+      "sessions": "16x pertemuan",
+      "duration": "90 menit/pertemuan",
+      "features": ["Mobil manual atau matic", "Instruktur privat", "Simulasi ujian SIM", "Jemput-antar seluruh Jember", "Pendampingan hari ujian", "Garansi: latih lagi sampai mahir"],
+      "highlight": true,
+      "badge": "Garansi Sampai Bisa"
+    }
+  ],
+  "pricingInfo": [
+    "Jadwal fleksibel (Jumat libur)",
+    "Pembayaran 2x: DP saat hari pertama, pelunasan hari ke-3",
+    "Pendaftaran gratis, bisa online / offline",
+    "Lokasi latihan: samping Indomaret GOR PKPSO, Kaliwates, Jember",
+    "Sertifikat kelulusan gratis",
+    "Gratis e-book modul latihan"
+  ],
+  "testimonials": [
+    { "name": "Afif Nur Rohmah", "role": "Siswa Paket Mahir", "quote": "Tutornya kasih arahan jelas dan pelan, jadi belajar nggak tegang. Di akhir sesi bisa request materi ulang, bahkan praktek parkir langsung di mall." },
+    { "name": "Nova Elisa", "role": "Siswa Paket VIP", "quote": "Instrukturnya sabar, ramah, dan ngajarnya gampang dipahami. Mobilnya enak dan terawat, adminnya juga fast respon. Recommended banget!" },
+    { "name": "Anik Novi Xsis", "role": "Siswa Paket 8X Pertemuan", "quote": "Awalnya takut bawa mobil, sekarang sudah berani sendiri. Instrukturnya ramah, sabar, dan telaten. Top buat pemula!" }
+  ],
+  "faq": [
+    { "q": "Apakah bisa belajar dari nol sama sekali?", "a": "Bisa. Sebagian besar siswa kami memang memulai dari nol, kurikulum disusun bertahap dari pengenalan kendaraan." },
+    { "a": "Ya, semua instruktur EmasAji berlisensi resmi dan berpengalaman melatih berbagai karakter siswa, termasuk yang butuh pendekatan ekstra sabar.", "q": "Apakah instrukturnya bersertifikat?" },
+    { "q": "Bagaimana jika saya belum lulus ujian SIM?", "a": "Kami dampingi latihan tambahan hingga Anda siap mengulang ujian, sesuai ketentuan paket yang diambil." },
+    { "q": "Lokasi kursus di mana saja?", "a": "Kami melayani area Jember dan sekitarnya, dengan opsi jemput-antar sesuai paket." }
+  ]
+}

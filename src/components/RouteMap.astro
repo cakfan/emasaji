@@ -1,0 +1,229 @@
+---
+import site from '../data/site.json';
+---
+
+<section id="rute" class="section route">
+  <div class="container">
+    <span class="eyebrow">Program</span>
+    <h2 class="route__title">Rute belajar, dari KM 0 sampai lulus</h2>
+    <p class="route__desc">Bukan urutan acak — setiap tahap dirancang supaya Anda naik level kepercayaan diri sebelum lanjut ke berikutnya.</p>
+
+    <div class="route__road">
+      <div class="route__line" aria-hidden="true">
+        <svg viewBox="0 0 1000 200" preserveAspectRatio="none">
+          <path d="M 0 180 Q 300 180, 500 100 T 1000 0" fill="none" stroke="rgba(250,249,245,0.10)" stroke-width="32" stroke-linecap="round" />
+          <path class="route__line-dash" d="M 0 180 Q 300 180, 500 100 T 1000 0" fill="none" stroke="rgba(250,249,245,0.20)" stroke-width="4" stroke-linecap="round" stroke-dasharray="24 18" />
+        </svg>
+      </div>
+      {site.steps.map((step, i) => {
+        const dotPositions = [340, 315, 240, 65, 0];
+        const isAbove = i % 2 === 0;
+        return (
+          <div
+            class:list={['route__stop', { 'route__stop--above': isAbove }]}
+            data-reveal
+            style={`--i: ${i}; --dot-y: ${dotPositions[i]}px`}
+          >
+            <div class="route__dot-wrap">
+              <div class="route__dot"></div>
+            </div>
+            <div class="route__sign">
+              <span class="route__km-badge">{step.km}</span>
+              <h3>{step.title}</h3>
+              <p>{step.desc}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  .route {
+    overflow: visible;
+  }
+
+  .route__title {
+    margin-top: 18px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    max-width: 620px;
+  }
+  .route__desc {
+    margin-top: 16px;
+    color: var(--muted);
+    max-width: 560px;
+  }
+
+  .route__road {
+    margin-top: 64px;
+    position: relative;
+    height: 420px;
+    overflow: visible;
+  }
+
+  .route__line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: visible;
+  }
+  .route__line svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .route__stop {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 22%;
+  }
+  .route__stop:nth-child(2) { left: 0%; }
+  .route__stop:nth-child(3) { left: 19%; }
+  .route__stop:nth-child(4) { left: 36%; }
+  .route__stop:nth-child(5) { left: 64%; }
+  .route__stop:nth-child(6) { left: 79%; }
+
+  .route__dot-wrap {
+    position: absolute;
+    top: var(--dot-y, 10px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+  }
+
+  .route__dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--gold), 0 0 16px rgba(236, 216, 16, 0.5);
+    animation: dotPulse 2.4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.4s);
+  }
+  @keyframes dotPulse {
+    0%, 100% { box-shadow: 0 0 0 2px var(--gold), 0 0 10px rgba(236, 216, 16, 0.4); }
+    50% { box-shadow: 0 0 0 4px rgba(236, 216, 16, 0.3), 0 0 24px rgba(236, 216, 16, 0.8); }
+  }
+
+  .route__sign {
+    position: absolute;
+    top: calc(var(--dot-y, 10px) + 20px);
+    left: 0;
+    right: 0;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    padding: 22px 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+  }
+  .route__stop--above .route__sign {
+    top: calc(var(--dot-y, 10px) - 20px);
+    transform: translateY(-100%);
+  }
+  .route__sign:hover {
+    border-color: var(--gold);
+    background: var(--bg-elevated-2);
+  }
+  .route__stop--above .route__sign:hover {
+    transform: translateY(calc(-100% - 4px));
+  }
+  .route__stop:not(.route__stop--above) .route__sign:hover {
+    transform: translateY(-4px);
+  }
+
+  .route__km-badge {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 6px 14px;
+    margin-bottom: 12px;
+  }
+
+  .route__sign h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .route__sign p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    .route__road {
+      padding-left: 48px;
+      padding-top: 0;
+      height: auto;
+    }
+    .route__line {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: auto;
+      width: 48px;
+      height: auto;
+    }
+    .route__line svg {
+      width: 48px;
+      height: 100%;
+    }
+    .route__stop {
+      position: relative;
+      width: 100%;
+      margin-bottom: 28px;
+      padding-top: 0;
+    }
+    .route__stop--above .route__sign {
+      top: auto;
+      bottom: auto;
+    }
+    .route__dot-wrap {
+      position: absolute;
+      left: -48px;
+      top: 4px;
+      transform: translate(-50%, 0);
+    }
+    .route__sign {
+      position: static;
+      text-align: left;
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .route__road {
+      padding-left: 40px;
+    }
+    .route__line {
+      width: 40px;
+    }
+    .route__line svg {
+      width: 40px;
+    }
+    .route__dot-wrap {
+      left: -40px;
+    }
+  }
+</style>
