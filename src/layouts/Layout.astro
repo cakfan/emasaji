@@ -23,18 +23,33 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
 
+    <meta name="theme-color" content="#0c0c0a" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/emasaji/logo.png" />
+    <meta property="og:image" content="https://cakfan.github.io/emasaji/logo.png" />
     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://cakfan.github.io/emasaji/logo.png" />
 
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "DrivingSchool",
       "name": site.brand.name,
-      "areaServed": site.brand.location,
+      "url": "https://cakfan.github.io/emasaji",
       "telephone": site.brand.phoneDisplay,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Perumahan Muktisari BBG 14-15",
+        "addressLocality": "Jember",
+        "addressRegion": "Jawa Timur",
+        "postalCode": "68126",
+        "addressCountry": "ID"
+      },
+      "areaServed": site.brand.location,
+      "openingHours": "Mo-Th,Sa-Su 07:00-18:00",
+      "priceRange": "Rp 390.000 - Rp 2.300.000"
     })} />
   </head>
   <body>
