@@ -20,15 +20,17 @@ const waLink = `https://wa.me/${site.brand.whatsapp}?text=${encodeURIComponent('
       <a href="#faq">FAQ</a>
     </nav>
 
-    <a href={waLink} class="btn btn-primary header__cta" target="_blank" rel="noopener">
-      Daftar Sekarang
-    </a>
+    <div class="header__actions">
+      <a href={waLink} class="btn btn-primary header__cta" target="_blank" rel="noopener">
+        Daftar Sekarang
+      </a>
 
-    <button class="hamburger" aria-label="Buka menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <button class="hamburger" aria-label="Buka menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -72,6 +74,7 @@ const waLink = `https://wa.me/${site.brand.whatsapp}?text=${encodeURIComponent('
     color: var(--muted);
   }
   .nav a:hover { color: var(--gold); }
+  .header__actions { display: flex; align-items: center; gap: 12px; }
   .header__cta { padding: 11px 22px; font-size: 0.85rem; }
 
   .hamburger {
