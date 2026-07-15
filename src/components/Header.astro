@@ -6,7 +6,7 @@ const waLink = `https://wa.me/${site.brand.whatsapp}?text=${encodeURIComponent('
 <header class="header">
   <div class="container header__inner">
     <a href="#" class="brand">
-      <img src="/logo.png" alt="EmasAji" width="40" height="40" />
+      <img src="/emasaji/logo.png" alt="EmasAji" width="40" height="40" />
       <span class="brand__text">
         <strong>EmasAji</strong>
         <small>Kursus Mengemudi</small>
@@ -15,20 +15,20 @@ const waLink = `https://wa.me/${site.brand.whatsapp}?text=${encodeURIComponent('
 
     <nav class="nav" aria-label="Navigasi utama">
       <a href="#layanan">Layanan</a>
-      <a href="#rute">Program</a>
       <a href="#paket">Paket</a>
+      <a href="#lokasi">Lokasi</a>
       <a href="#faq">FAQ</a>
     </nav>
+
+    <a href={waLink} class="btn btn-primary header__cta" target="_blank" rel="noopener">
+      Daftar Sekarang
+    </a>
 
     <button class="hamburger" aria-label="Buka menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
-
-    <a href={waLink} class="btn btn-primary header__cta" target="_blank" rel="noopener">
-      Daftar Sekarang
-    </a>
   </div>
 </header>
 
