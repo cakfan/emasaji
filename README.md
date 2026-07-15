@@ -71,6 +71,4 @@ npm run build
 # Copy docs/* to gh-pages branch, commit, push
 ```
 
-## License
 
-Private — EmasAji Kursus Mengemudi Jember.
