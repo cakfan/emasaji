@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://emasaji.id',
+  site: 'https://cakfan.github.io',
+  base: '/emasaji',
+  outDir: './docs',
   output: 'static',
-  // Ganti sesuai kebutuhan deploy (GitHub Pages / custom domain / Vercel dll)
 });
