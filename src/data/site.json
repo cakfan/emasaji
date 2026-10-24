@@ -18,10 +18,10 @@
     { "value": 9, "suffix": " thn", "label": "Pengalaman melatih" }
   ],
   "trust": [
-    "Terdaftar resmi Dinas Pendidikan",
+    "Terdaftar resmi Dinas Pendidikan (NPSN: K9997431)",
     "Bermitra dengan Korlantas Polri",
     "8.500+ anggota komunitas EmasAji",
-    "Rating 4.9/5 dari siswa"
+    "Rating 4.9/5 Di Google dari siswa"
   ],
   "services": [
     {
@@ -49,7 +49,7 @@
     {
       "km": "KM 2",
       "title": "Turun ke Jalan Jember",
-      "desc": "Latihan dari area sepi sampai jalanan ramai, ditemenin instruktur sabar."
+      "desc": "Latihan dari area sepi sampai jalanan ramai, di dampingi instruktur sabar."
     },
     {
       "km": "KM 3",
@@ -63,10 +63,10 @@
     }
   ],
   "why": [
-    { "title": "Instruktur Bersertifikat", "desc": "Terlatih dan berpengalaman puluhan tahun — sabar ngadepin siswa dari yang takut megang setir sampai yang agak bandel." },
-    { "title": "Armada Terawat", "desc": "Kendaraan diservis rutin, nyaman dan aman untuk belajar dari nol." },
-    { "title": "Jadwal Fleksibel", "desc": "Bisa dijemput dari rumah, waktu belajar menyesuaikan kesibukan Anda." },
-    { "title": "Garansi Bimbingan", "desc": "Belum lulus ujian? Kami dampingi lagi hingga Anda benar-benar siap." }
+    { "title": "Instruktur Bersertifikat", "desc": "Terlatih dan berpengalaman mendampingi ratusan siswa." },
+    { "title": "Armada Terawat", "desc": "Kendaraan diservis rutin, Full AC, nyaman dan sudah memiliki safety double rem sehingga aman untuk belajar dari nol." },
+    { "title": "Jadwal Fleksibel", "desc": "Jadwal kursus bisa menyesuaikan kesibukan Anda." },
+    { "title": "Ber Garansi", "desc": "Bayar 1x, belajar sepuasnnya tanpa batasan pertemuan (VVIP)." }
   ],
   "pricing": [
     {
@@ -75,7 +75,7 @@
       "originalPrice": "Rp 450.000",
       "sessions": "3x pertemuan",
       "duration": "90 menit/pertemuan",
-      "features": ["Mobil manual atau matic", "Instruktur privat", "Area latihan bertahap"],
+      "features": ["Mobil manual atau matic", "Cocok untuk refresh kemampuan", "Latihan dasar & control mobil" , "Meningkatkan rasa percaya diri"],
       "highlight": false
     },
     {
@@ -84,7 +84,7 @@
       "originalPrice": "Rp 900.000",
       "sessions": "6x pertemuan",
       "duration": "90 menit/pertemuan",
-      "features": ["Mobil manual atau matic", "Instruktur privat", "Simulasi ujian SIM", "Jemput-antar area kota"],
+      "features": ["Mobil manual atau matic", "Untuk yang sudah bisa dasar", "Simulasi ujian SIM", "Latihan rute lebih kompleks" , "Persiapan jalan raya dan tanjakan"],
       "highlight": false
     },
     {
@@ -93,7 +93,7 @@
       "originalPrice": "Rp 1.200.000",
       "sessions": "8x pertemuan",
       "duration": "90 menit/pertemuan",
-      "features": ["Mobil manual atau matic", "Instruktur privat", "Simulasi ujian SIM", "Jemput-antar area kota"],
+      "features": ["Mobil manual atau matic", "Dari nol sampai bisa nyetir", "Materi lengkap & bertahap", "Fokus percaya diri dan penguasaan mobil"],
       "highlight": false
     },
     {
@@ -102,7 +102,7 @@
       "originalPrice": "Rp 1.500.000",
       "sessions": "10x pertemuan",
       "duration": "90 menit/pertemuan",
-      "features": ["Mobil manual atau matic", "Instruktur privat", "Simulasi ujian SIM", "Jemput-antar seluruh Jember", "Pendampingan hari ujian"],
+      "features": ["Mobil manual atau matic", "Sampai benar-benar berani ke jalan raya", "Latihan rute ramai dan jalan raya", "materi rute jarak jauh"],
       "highlight": false
     },
     {
@@ -111,7 +111,7 @@
       "originalPrice": "Rp 2.650.000",
       "sessions": "16x pertemuan",
       "duration": "90 menit/pertemuan",
-      "features": ["Mobil manual atau matic", "Instruktur privat", "Simulasi ujian SIM", "Jemput-antar seluruh Jember", "Pendampingan hari ujian", "Garansi: latih lagi sampai mahir"],
+      "features": ["Mobil manual atau matic", "Program paling lengkap", "Latihan lebih intensif sampai mahir", "Garansi: latih lagi sampai mahir"],
       "highlight": true,
       "badge": "Garansi Sampai Bisa"
     }
@@ -120,7 +120,7 @@
     "Jadwal fleksibel (Jumat libur)",
     "Pembayaran 2x: DP saat hari pertama, pelunasan hari ke-3",
     "Pendaftaran gratis, bisa online / offline",
-    "Lokasi latihan: samping Indomaret GOR PKPSO, Kaliwates, Jember",
+    "Lokasi Meetpoint: samping Indomaret GOR PKPSO, Kaliwates, Jember",
     "Sertifikat kelulusan gratis",
     "Gratis e-book modul latihan"
   ],
@@ -133,6 +133,6 @@
     { "q": "Apakah bisa belajar dari nol sama sekali?", "a": "Bisa. Sebagian besar siswa kami memang memulai dari nol, kurikulum disusun bertahap dari pengenalan kendaraan." },
     { "a": "Ya, semua instruktur EmasAji berlisensi resmi dan berpengalaman melatih berbagai karakter siswa, termasuk yang butuh pendekatan ekstra sabar.", "q": "Apakah instrukturnya bersertifikat?" },
     { "q": "Bagaimana jika saya belum lulus ujian SIM?", "a": "Kami dampingi latihan tambahan hingga Anda siap mengulang ujian, sesuai ketentuan paket yang diambil." },
-    { "q": "Lokasi kursus di mana saja?", "a": "Kami melayani area Jember dan sekitarnya, dengan opsi jemput-antar sesuai paket." }
+    { "q": "Lokasi kursus di mana saja?", "a": "Kami melayani area Jember dan sekitarnya." }
   ]
 }
